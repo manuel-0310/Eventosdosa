@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio – Eventos Dosa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="src/dosa.png">
+</head>
+<script>
+    fetch("https://api.sheetbest.com/sheets/f96dea09-d844-497d-887f-c28d3c1236f2") // ← pega tu URL aquí
+        .then(res => res.json())
+        .then(data => {
+            const contenedor = document.getElementById("galeria-dinamica");
+            data.forEach(foto => {
+                const img = document.createElement("img");
+                img.src = foto.url;
+                img.alt = "Foto de evento";
+                contenedor.appendChild(img);
+            });
+        });
+</script>
+<body>
+    <!-- Intro con logo -->
+    <div class="intro">
+        <img src="src/dosa.png" alt="Logo Eventos Dosa">
+    </div>
+
+    <!-- Menú -->
+    <header class="menu">
+        <a href="index.html" class="logo">Eventos Dosa</a>
+        <nav>
+            <ul>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Testimonio</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    <!-- Sección principal del portafolio -->
+    <section class="fotos">
+        <h1>Fotos</h1>
+        <div class="carrusel-wrapper">
+          <div class="galeria-scroll" id="galeria-dinamica">
+            <!-- imágenes -->
+          </div>
+        </div>
+      </section>
+      
+    
+
+    <footer></footer>
+
+    <!-- Script para mostrar menú al hacer scroll -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const menu = document.querySelector('.menu');
+            if (window.scrollY > 50) {
+                menu.classList.add('visible');
+            } else {
+                menu.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

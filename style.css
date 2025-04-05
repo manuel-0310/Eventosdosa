@@ -1,7 +1,12 @@
 body {
+    margin: 0;
+    padding: 0;
     background-color: #e7c9c9;
     color: #b74e58;
+    font-family: 'Montserrat', sans-serif;
 }
+
+
 
 
 @font-face {
@@ -92,8 +97,12 @@ nav a {
 
 .logo {
     font-family: 'Castilon', serif;
-    font-size: 32px; /* puedes cambiar el tamaño si quieres */
+    font-size: 32px;
+    text-align: center;
+    text-decoration: none;
+    color: #b74e58;
 }
+
 
 .organizer {
     display: flex;
@@ -211,4 +220,73 @@ nav a {
     max-width: 600px;
     margin: 0;
     text-align: left;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.fotos {
+    padding: 60px 40px;
+    background-color: #f5eaea;
+}
+
+.fotos h1 {
+    font-family: 'Castilon', serif;
+    font-size: 36px;
+    color: #b74e58;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* contenedor externo que oculta todo exceso */
+.carrusel-wrapper {
+    overflow: hidden;
+    border-radius: 16px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* carrusel deslizable */
+.galeria-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0;                 /* ✅ quita el padding que creaba espacio */
+    margin: 0;                  /* ✅ sin margen inferior */
+    gap: 0;
+    line-height: 0;
+
+    border: none;
+    border-radius: 16px;
+    background-color: transparent;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); /* sombra pegada */
+}
+
+/* imágenes del carrusel */
+.galeria-scroll img {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    scroll-snap-align: start;
+}
+
+/* quitar barra scroll visual */
+.galeria-scroll::-webkit-scrollbar {
+    display: none;
+}
+.galeria-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
