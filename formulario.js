@@ -5,7 +5,7 @@ document.getElementById('form-contacto').addEventListener('submit', function(e) 
   boton.disabled = true;
   boton.textContent = "Enviando...";
 
-  emailjs.sendForm('service_6m7prwn', 'template_wkbb3r9', this)
+  emailjs.sendForm('service_6m7prwn', 'template_072wipc', this)
     .then(function() {
       alert('✅ Mensaje enviado correctamente');
       document.getElementById('form-contacto').reset();
