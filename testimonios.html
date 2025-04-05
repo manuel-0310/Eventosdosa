@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Testimonios - Eventos Dosa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="src/dosa.png">
+</head>
+<body>
+
+  <!-- Intro con logo centrado -->
+  <div class="intro">
+    <img src="src/dosa.png" alt="Logo Eventos Dosa">
+  </div>
+
+  <!-- Menú superior con logo -->
+  <header class="menu">
+    <a href="index.html" class="logo">
+      <img src="src/dosa2.png" alt="Logo Eventos Dosa">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="portafolio.html">Portafolio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección de testimonios -->
+  <section class="testimonios">
+    <h1>Testimonios</h1>
+    <div class="testimonios-grid">
+  
+      <div class="testimonio">
+        <img src="src/testimonio1.jpg" alt="Pareja 1">
+        <h3>Natalia y Manuel</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+      </div>
+  
+      <div class="testimonio">
+        <img src="src/testimonio1.jpg" alt="Pareja 2">
+        <h3>Carolina y Jonathan</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+      </div>
+  
+      <div class="testimonio">
+        <img src="src/testimonio1.jpg" alt="Pareja 3">
+        <h3>Carolina y Thomas</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec ante. Sed lacinia, urna non tincidunt mattis.</p>
+      </div>
+  
+      <div class="testimonio">
+        <img src="src/testimonio1.jpg" alt="Pareja 4">
+        <h3>Laura y Miguel</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel sem at justo bibendum aliquet. Vivamus in justo at leo.</p>
+      </div>
+  
+      <div class="testimonio">
+        <img src="src/testimonio1.jpg" alt="Pareja 5">
+        <h3>Sofía y Daniel</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus.</p>
+      </div>
+  
+      <div class="testimonio">
+        <img src="src/testimonio1.jpg" alt="Pareja 6">
+        <h3>Isabella y Andrés</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis. Aliquam erat volutpat. Aenean placerat.</p>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <footer></footer>
+
+  <!-- Script para que aparezca el menú al hacer scroll -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const menu = document.querySelector('.menu');
+      if (window.scrollY > 50) {
+        menu.classList.add('visible');
+      } else {
+        menu.classList.remove('visible');
+      }
+    });
+  </script>
+
+</body>
+</html>
