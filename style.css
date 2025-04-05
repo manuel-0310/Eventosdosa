@@ -1,0 +1,214 @@
+body {
+    background-color: #e7c9c9;
+    color: #b74e58;
+}
+
+
+@font-face {
+    font-family: 'Castilon';
+    src: url('src/Castilon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Castilon', serif;
+}
+
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+
+
+/* intro centrada */
+.intro {
+    height: 100vh;
+    background-color: #e7c9c9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* logo imagen */
+.intro img {
+    max-width: 200px;
+    animation: fadeIn 2s ease-in;
+}
+
+
+
+/* animación fade */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+
+.menu {
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #e7c9c9;
+    padding: 20px 40px;
+    z-index: 1000;
+}
+
+.menu.visible {
+    opacity: 1;
+}
+
+
+
+nav ul {
+    list-style: none;         /* quita los puntos */
+    display: flex;            /* pone los items en fila */
+    gap: 20px;                /* espacio entre items */
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;          /* asegura que no se apilen */
+}
+
+nav a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #b74e58;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.logo {
+    font-family: 'Castilon', serif;
+    font-size: 32px; /* puedes cambiar el tamaño si quieres */
+}
+
+.organizer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    gap: 60px;
+    background-color: #f3dddd; /* opcional, más claro que el fondo base */
+    flex-wrap: wrap; /* para que se acomode en celular */
+}
+
+.organizer-img img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.organizer-info {
+    max-width: 600px;
+}
+
+.organizer-info h1 {
+    font-family: 'Castilon', serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #b74e58;
+}
+
+.organizer-info p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.decoraciones {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #e7c9c9;
+}
+
+.decoraciones h1 {
+    font-family: 'Castilon', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #b74e58;
+}
+
+.decoraciones p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.lugares {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #f5eaea;
+}
+
+.lugares h1 {
+    font-family: 'Castilon', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #b74e58;
+}
+
+.lugares p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.redes {
+    padding: 60px 40px;
+    background-color: #e7c9c9;
+    text-align: center;
+}
+
+.redes h1 {
+    font-family: 'Castilon', serif;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #b74e58;
+}
+
+.redes-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.redes-contenido img {
+    width: 60px;
+    height: 60px;
+}
+
+.redes-contenido p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0;
+    text-align: left;
+}
