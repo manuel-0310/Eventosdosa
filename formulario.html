@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de contacto</title>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Contáctanos</h2>
+
+  <form id="form-contacto">
+    <input type="text" name="user_name" placeholder="Nombre" required>
+    <input type="tel" name="user_phone" placeholder="Teléfono" required>
+    <input type="email" name="user_email" placeholder="Correo" required>
+    <textarea name="message" placeholder="Comentarios" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("O9TA18-zps7iaEptM");
+    })();
+  </script>
+  
+
+  <script src="formulario.js"></script>
+
+</body>
+</html>
