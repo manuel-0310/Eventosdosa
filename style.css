@@ -563,8 +563,6 @@ body {
 #form-contacto button:hover {
   background-color: #943b45;
 }
-
-
 @media screen and (min-width: 768px) {
   /* Solo para pantallas más grandes */
   .formulario-contacto {
@@ -676,12 +674,6 @@ html {
 @media (max-width: 992px) {
   .galeria-masonry {
     column-count: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .galeria-masonry {
-    column-count: 1;
   }
 }
 
