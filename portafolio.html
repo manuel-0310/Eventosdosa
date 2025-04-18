@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="src/dosa.png">
 </head>
-<script>
-    fetch("https://api.sheetbest.com/sheets/f96dea09-d844-497d-887f-c28d3c1236f2") // ← pega tu URL aquí
-        .then(res => res.json())
-        .then(data => {
-            const contenedor = document.getElementById("galeria-dinamica");
-            data.forEach(foto => {
-                const img = document.createElement("img");
-                img.src = foto.url;
-                img.alt = "Foto de evento";
-                contenedor.appendChild(img);
-            });
-        });
-</script>
+
+
 <body>
     <!-- Intro con logo -->
     <div class="intro">
@@ -28,38 +18,76 @@
     </div>
 
     <!-- Menú -->
-    <header class="menu">
-        <a href="index.html" class="logo">
-            <img src="src/dosa2.png" alt="Eventos Dosa Logo">
-          </a>   
-        <nav>
-            <ul>
-                <li><a href="portafolio.html">Portafolio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="testimonios.html">Testimonios</a></li>
-                <li><a href="videos.html">Videos</a></li>
-                <li><a href="formulario.html">Contacto</a></li>
-            </ul>
-        </nav>        
-    </header>
+    <header class="menu visible">
+        <div class="menu-superior">
+          <a href="index.html" class="logo">
+            <img src="src/dosa2.png" alt="Logo Eventos Dosa">
+          </a>
+          <button class="menu-toggle" id="menuToggle">
+            <img src="src/lineas.png" alt="Abrir menú">
+          </button>
+        </div>
+      
+        <nav id="navMenu">
+          <ul>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="testimonios.html">Testimonios</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="formulario.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
 
     <!-- Sección principal del portafolio -->
     <section class="fotos">
         <h1>Fotos</h1>
-        <div class="carrusel-wrapper">
-          <div class="galeria-scroll" id="galeria-dinamica">
-            <!-- imágenes -->
-          </div>
+        <div class="galeria-masonry" id="galeria-dinamica">
+            <!-- Las imágenes se cargarán aquí automáticamente -->
         </div>
-      </section>
+
+        <!-- Modal para ampliar imágenes -->
+        <div id="modal" class="modal">
+            <span class="cerrar" id="cerrarModal">&times;</span>
+            <img class="modal-contenido" id="imgModal">
+        </div>
+    </section>
+
+
+
+
+    <footer class="footer-simple">
+        <div class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="portafolio.html">Portafolio</a>
+          <a href="servicios.html">Servicios</a>
+          <a href="testimonios.html">Testimonios</a>
+          <a href="videos.html">Videos</a>
+          <a href="formulario.html">Contacto</a>
+        </div>
       
-    
-
-    <footer></footer>
-
+        <div class="footer-social">
+          <a href="https://instagram.com/alejariveros" target="_blank">@alejariveros</a> |
+          <a href="https://instagram.com/eventosdosa" target="_blank">@eventosdosa</a>
+        </div>
+        <div class="footer-whatsapp">
+            <img src="src/whatsapp1.png" alt="WhatsApp Icon">
+            <span>+57 320 456 7890</span>
+          </div>
+        
+      
+        <div class="footer-creditos">
+          © 2025 Alejandra Riveros
+        </div>
+      
+        <div class="footer-logo">
+          <img src="src/dosa.png" alt="Logo Dosa">
+        </div>
+      </footer>
+      
     <!-- Script para mostrar menú al hacer scroll -->
     <script>
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const menu = document.querySelector('.menu');
             if (window.scrollY > 50) {
                 menu.classList.add('visible');
@@ -68,5 +96,75 @@
             }
         });
     </script>
+<script>
+    fetch("https://api.sheetbest.com/sheets/f96dea09-d844-497d-887f-c28d3c1236f2")
+      .then(res => res.json())
+      .then(data => {
+        const contenedor = document.getElementById("galeria-dinamica");
+        const nombresUnicos = new Set();
+  
+        data.forEach(foto => {
+          const url = foto.url?.trim();
+  
+          if (url) {
+            // Extraer solo el nombre del archivo, sin parámetros
+            const nombreImagen = url.split('/').pop().split('?')[0];
+  
+            // Evitar repetir imágenes visualmente
+            if (!nombresUnicos.has(nombreImagen)) {
+              nombresUnicos.add(nombreImagen);
+  
+              const img = document.createElement("img");
+              img.src = url;
+              img.alt = "Foto de evento";
+              contenedor.appendChild(img);
+            }
+          }
+        });
+      });
+  </script>
+  
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const galeria = document.getElementById("galeria-dinamica");
+            const modal = document.getElementById("modal");
+            const imgModal = document.getElementById("imgModal");
+            const cerrarModal = document.getElementById("cerrarModal");
+
+            galeria.addEventListener("click", function (e) {
+                if (e.target.tagName === "IMG") {
+                    imgModal.src = e.target.src;
+                    modal.style.display = "flex";
+                }
+            });
+
+            cerrarModal.addEventListener("click", () => modal.style.display = "none");
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) modal.style.display = "none";
+            });
+        });
+    </script>
+      <script>
+        // mostrar menú con botón hamburguesa
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+      
+        menuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('visible');
+        });
+      </script>
+      <script>
+        window.addEventListener('DOMContentLoaded', () => {
+          document.body.classList.add('fade-in');
+        });
+      </script>
+<script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+        
+
 </body>
+
 </html>

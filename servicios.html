@@ -16,11 +16,17 @@
   </div>
 
   <!-- Menú superior con logo -->
-  <header class="menu">
-    <a href="index.html" class="logo">
-      <img src="src/dosa2.png" alt="Logo Eventos Dosa">
-    </a>
-    <nav>
+  <header class="menu visible">
+    <div class="menu-superior">
+      <a href="index.html" class="logo">
+        <img src="src/dosa2.png" alt="Logo Eventos Dosa">
+      </a>
+      <button class="menu-toggle" id="menuToggle">
+        <img src="src/lineas.png" alt="Abrir menú">
+      </button>
+    </div>
+  
+    <nav id="navMenu">
       <ul>
         <li><a href="portafolio.html">Portafolio</a></li>
         <li><a href="servicios.html">Servicios</a></li>
@@ -30,20 +36,47 @@
       </ul>
     </nav>
   </header>
-
   <!-- Sección de servicios -->
-  <section class="lugares">
-    <h1>Servicios</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus posuere tincidunt odio, 
-      non tincidunt orci porttitor ut. Curabitur non ligula et erat euismod tincidunt. 
-      Suspendisse potenti. Nunc vel sapien nec purus varius convallis vitae et sapien.
-    </p>
+  <section class="servicios-todos">
+    <div class="servicios-grid-unida">
+      <div class="servicio-box servicio1">Servicio 1</div>
+      <div class="servicio-box servicio2">Servicio 2</div>
+      <div class="servicio-box servicio3">Servicio 3</div>
+      <div class="servicio-box servicio4">Servicio 4</div>
+      <div class="servicio-box servicio5">Servicio 5</div>
+      <div class="servicio-box servicio6">Servicio 6</div>
+    </div>
   </section>
   
-  
 
-  <footer></footer>
+  <footer class="footer-simple">
+    <div class="footer-links">
+      <a href="index.html">Inicio</a>
+      <a href="portafolio.html">Portafolio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="testimonios.html">Testimonios</a>
+      <a href="videos.html">Videos</a>
+      <a href="formulario.html">Contacto</a>
+    </div>
+  
+    <div class="footer-social">
+      <a href="https://instagram.com/alejariveros" target="_blank">@alejariveros</a> |
+      <a href="https://instagram.com/eventosdosa" target="_blank">@eventosdosa</a>
+    </div>
+    <div class="footer-whatsapp">
+      <img src="src/whatsapp1.png" alt="WhatsApp Icon">
+      <span>+57 320 456 7890</span>
+    </div>
+  
+    <div class="footer-creditos">
+      © 2025 Alejandra Riveros
+    </div>
+  
+    <div class="footer-logo">
+      <img src="src/dosa.png" alt="Logo Dosa">
+    </div>
+  </footer>
+  
 
   <!-- Script para que aparezca el menú al hacer scroll -->
   <script>
@@ -56,6 +89,25 @@
       }
     });
   </script>
-
+  <script>
+    // mostrar menú con botón hamburguesa
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+  
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('visible');
+    });
+  </script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+  </script>
+<script>
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+</script>
+  
 </body>
 </html>

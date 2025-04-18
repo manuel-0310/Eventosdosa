@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +9,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="src/dosa.png">
 </head>
+
 <body>
+    <div id="selectorIdioma" class="selector-idioma">
+        <img src="src/dosa.png" alt="Logo Dosa">
+        <div class="opciones">
+          <a href="#" onclick="elegirIdioma('es')">Español</a>
+          <a href="#" onclick="elegirIdioma('en')">English</a>
+        </div>
+      </div>
+      
+      
+      
+      
     <!-- Pantalla inicial con logo -->
     <div class="intro">
         <img src="src/dosa.png" alt="Logo Eventos Dosa">
     </div>
 
     <!-- Menú que aparece al hacer scroll -->
-    <header class="menu">
-        <a href="index.html" class="logo">
-            <img src="src/dosa2.png" alt="Eventos Dosa Logo">
-          </a>          
-        <nav>
-            <ul>
-                <li><a href="portafolio.html">Portafolio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="testimonios.html">Testimonios</a></li>
-                <li><a href="videos.html">Videos</a></li>
-                <li><a href="formulario.html">Contacto</a></li>
-            </ul>            
-        </nav>        
-    </header>
-    
-    
+    <header class="menu visible">
+        <div class="menu-superior">
+          <a href="index.html" class="logo">
+            <img src="src/dosa2.png" alt="Logo Eventos Dosa">
+          </a>
+          <button class="menu-toggle" id="menuToggle">
+            <img src="src/lineas.png" alt="Abrir menú">
+          </button>
+        </div>
+      
+        <nav id="navMenu">
+          <ul>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="testimonios.html">Testimonios</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="formulario.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+
+
 
     <!-- Sección de ejemplo -->
     <section class="organizer">
@@ -39,49 +59,82 @@
         </div>
         <div class="organizer-info">
             <h1>Alejandra Riveros</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-               Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. 
-               Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
-            <p>Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. 
-               Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. 
-               Sed aliquet risus a tortor.</p>
+            <p>Alejandra transforma espacios en experiencias
+                memorables. Como decoradora, Wedding planner y planeadora
+                de eventos, da vida a celebraciones únicas donde cada detalle
+                refleja elegancia, armonía y emoción. Su trabajo abarca desde
+                la planificación integral hasta la creación de ramos
+                personalizados, diseñados para capturar la esencia de cada
+                momento especial.</p>
+
         </div>
-    </section>
-    
-    <section class="decoraciones">
-        <h1>Decoraciones</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. 
-            Sed nisi. Nulla quis sem at nibh elementum imperdiet. 
-            Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed 
-            augue semper porta. Mauris massa.</p>         
-    </section>
-    
-    <section class="lugares">
-        <h1>Lugares en Boyacá</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-           Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-           nisi ut aliquip ex ea commodo consequat.</p>
     </section>
 
-    <section class="redes">
-        <h1>Redes Sociales</h1>
-        <div class="redes-contenido">
-            <img src="src/instagram.png" alt="Instagram">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-               Etiam tincidunt, nisl sit amet facilisis efficitur, lacus justo volutpat nisi, 
-               nec faucibus velit nunc sed erat. Sed sit amet quam sit amet turpis ullamcorper blandit.</p>
+    <section class="decoraciones">
+        <div class="decoraciones-info">
+          <h1>Decoraciones</h1>
+          <p>Especialistas en crear momentos mágicos a través de la decoración floral para eventos. Diseñamos ambientes únicos con flores frescas, colores, texturas y detalles que reflejan la esencia de cada celebración. Desde bodas íntimas hasta eventos corporativos, transformamos tus ideas en escenarios llenos de vida, elegancia y armonía.
+            </p>
         </div>
-    </section>
-    
-    
+        <div class="decoraciones-img">
+          <img src="src/alejandra2.jpg" alt="Decoraciones Eventos Dosa">
+        </div>
+      </section>
+      
+
+      
+
+  
+      <section class="redes">
+        <h1>Redes Sociales</h1>
+        <p>Sigue nuestro trabajo en Instagram, donde compartimos ideas, decoraciones y eventos inolvidables.</p>
+      
+        <!-- LightWidget WIDGET -->
+        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+        <iframe src="https://cdn.lightwidget.com/widgets/caf195c7d08657d2b271e692ca898064.html"
+                scrolling="no"
+                allowtransparency="true"
+                class="lightwidget-widget"
+                style="width:100%;border:0;overflow:hidden;">
+        </iframe>
+      </section>
+      
+
+
     <!-- Footer vacío por ahora -->
-    <footer></footer>
+    <footer class="footer-simple">
+        <div class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="portafolio.html">Portafolio</a>
+          <a href="servicios.html">Servicios</a>
+          <a href="testimonios.html">Testimonios</a>
+          <a href="videos.html">Videos</a>
+          <a href="formulario.html">Contacto</a>
+        </div>
+      
+        <div class="footer-social">
+          <a href="https://instagram.com/alejariveros" target="_blank">@alejariveros</a> |
+          <a href="https://instagram.com/eventosdosa" target="_blank">@eventosdosa</a>
+        </div>
+        <div class="footer-whatsapp">
+            <img src="src/whatsapp1.png" alt="WhatsApp Icon">
+            <span>+57 320 456 7890</span>
+          </div>
+        
+        <div class="footer-creditos">
+          © 2025 Alejandra Riveros
+        </div>
+      
+        <div class="footer-logo">
+          <img src="src/dosa.png" alt="Logo Dosa">
+        </div>
+      </footer>
+      
+      
 
     <!-- Script para mostrar el menú al hacer scroll -->
     <script>
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const menu = document.querySelector('.menu');
             if (window.scrollY > 50) {
                 menu.classList.add('visible');
@@ -90,5 +143,54 @@
             }
         });
     </script>
+    <script>
+        // mostrar menú con botón hamburguesa
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+      
+        menuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('visible');
+        });
+      </script>
+      <script>
+        window.addEventListener('DOMContentLoaded', () => {
+          document.body.classList.add('fade-in');
+        });
+      </script>
+<script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+    <script>
+        function elegirIdioma(idioma) {
+          localStorage.setItem('idiomaElegido', idioma);
+      
+          const selector = document.getElementById('selectorIdioma');
+          selector.classList.add('fade-out');
+      
+          setTimeout(() => {
+            selector.style.display = 'none';
+      
+            // Aquí puedes redirigir a otra página si tienes una versión en inglés
+            // if (idioma === 'en') window.location.href = 'index-en.html';
+          }, 800);
+        }
+      
+        window.addEventListener('DOMContentLoaded', () => {
+          const idioma = localStorage.getItem('idiomaElegido');
+          const selector = document.getElementById('selectorIdioma');
+      
+          if (idioma) {
+            selector.style.display = 'none';
+          }
+        });
+      </script>
+      
+      
+      
+      
+          
 </body>
+
 </html>
