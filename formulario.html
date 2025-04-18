@@ -11,8 +11,13 @@
 
 <body>
 
-  <!-- Logo y navegación opcional (si la quieres igual que en index) -->
-  <header class="menu visible">
+  <!-- Intro con logo -->
+  <div class="intro">
+    <img src="src/dosa.png" alt="Logo Eventos Dosa">
+</div>
+
+<!-- Menú -->
+<header class="menu visible">
     <div class="menu-superior">
       <a href="index.html" class="logo">
         <img src="src/dosa2.png" alt="Logo Eventos Dosa">
@@ -22,7 +27,7 @@
       </button>
     </div>
   
-    <nav id="navMenu" class="">
+    <nav id="navMenu">
       <ul>
         <li><a href="portafolio.html">Portafolio</a></li>
         <li><a href="servicios.html">Servicios</a></li>
@@ -36,10 +41,11 @@
   
   <section class="formulario-contacto">
     <h2>Contáctanos</h2>
+    
     <form id="form-contacto">
       <input type="text" name="user_name" placeholder="Nombre" required>
-      <input type="tel" name="user_phone" placeholder="Teléfono" pattern="\d{10,}" required>
       <input type="email" name="user_email" placeholder="Correo" required>
+      <input type="tel" name="user_phone" placeholder="Teléfono" pattern="\d{10,}" required>
       <textarea name="message" placeholder="Comentarios" required></textarea>
       <button type="submit">Enviar</button>
     </form>
@@ -79,6 +85,16 @@
     (function () {
       emailjs.init("O9TA18-zps7iaEptM");
     })();
+
+    //mostrar menu con scroll
+    window.addEventListener('scroll', function () {
+            const menu = document.querySelector('.menu');
+            if (window.scrollY > 50) {
+                menu.classList.add('visible');
+            } else {
+                menu.classList.remove('visible');
+            }
+        });
   </script>
 
   <script src="formulario.js"></script>

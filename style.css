@@ -286,7 +286,6 @@ nav a {
   margin-bottom: 40px;
 }
 
-/* Galería tipo masonry */
 .galeria-masonry {
   column-count: 4;
   column-gap: 15px;
@@ -306,8 +305,6 @@ nav a {
   transform: scale(1.02);
 }
 
-
-/* Modal para ampliar */
 .modal {
   display: none;
   position: fixed;
@@ -336,6 +333,32 @@ nav a {
   cursor: pointer;
 }
 
+@media (max-width: 992px) {
+  .galeria-masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .galeria-masonry {
+    column-count: 2 !important;
+    column-gap: 10px;
+  }
+
+  .galeria-masonry img {
+    display: inline-block;
+    width: 100%;
+  }
+  .fotos h1 {
+    font-size: 28px;
+  }
+
+  .cerrar {
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+  }
+}
 
 /* contenedor externo que oculta todo exceso */
 .carrusel-wrapper {
@@ -420,14 +443,26 @@ nav a {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+/* Reset general */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.formulario-contacto {
-  max-width: 500px;
-  margin: 100px auto;
+body {
+  font-family: 'Montserrat', sans-serif;
   background-color: #f8e9e9;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para el formulario */
+.formulario-contacto {
+  max-width: 100%;
+  width: 100%;
+  background-color: transparent;
+  padding: 20px;
+  margin: 0;
+  box-shadow: none;
 }
 
 .formulario-contacto h2 {
@@ -441,25 +476,23 @@ nav a {
 #form-contacto {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 15px;
 }
 
 #form-contacto input,
 #form-contacto textarea {
   background-color: #fff;
   border: 1px solid transparent;
-  /* borde suave transparente */
   border-bottom: 2px solid #b74e58;
   border-radius: 10px;
-  /* esquinas suaves */
   font-size: 16px;
   padding: 12px 16px;
   font-family: 'Montserrat', sans-serif;
   color: #b74e58;
   transition: all 0.3s ease;
   outline: none;
+  width: 100%;
 }
-
 
 #form-contacto input::placeholder,
 #form-contacto textarea::placeholder {
@@ -474,7 +507,7 @@ nav a {
 }
 
 #form-contacto textarea {
-  min-height: 100px;
+  min-height: 120px;
   resize: vertical;
 }
 
@@ -483,17 +516,40 @@ nav a {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  padding: 12px;
+  padding: 14px;
   border: none;
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  margin-top: 10px;
 }
 
 #form-contacto button:hover {
   background-color: #943b45;
 }
+
+
+@media screen and (min-width: 768px) {
+  /* Solo para pantallas más grandes */
+  .formulario-contacto {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #f8e9e9;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  #form-contacto button {
+    width: auto;
+    min-width: 150px;
+    align-self: flex-start;
+  }
+}
+
+
 
 html {
   scroll-behavior: smooth;
