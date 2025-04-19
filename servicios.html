@@ -25,7 +25,6 @@
         <img src="src/lineas.png" alt="Abrir menú">
       </button>
     </div>
-  
     <nav id="navMenu">
       <ul>
         <li><a href="portafolio.html">Portafolio</a></li>
@@ -36,19 +35,43 @@
       </ul>
     </nav>
   </header>
+
   <!-- Sección de servicios -->
   <section class="servicios-todos">
     <div class="servicios-grid-unida">
-      <div class="servicio-box servicio1">Servicio 1</div>
-      <div class="servicio-box servicio2">Servicio 2</div>
-      <div class="servicio-box servicio3">Servicio 3</div>
-      <div class="servicio-box servicio4">Servicio 4</div>
-      <div class="servicio-box servicio5">Servicio 5</div>
-      <div class="servicio-box servicio6">Servicio 6</div>
+      <div class="servicio-box servicio1" onclick="mostrarDescripcion(0)">
+        <div class="overlay"></div>
+        <span class="titulo-servicio">Decoraciones</span>
+      </div>
+      <div class="servicio-box servicio2" onclick="mostrarDescripcion(1)">
+        <div class="overlay"></div>
+        <span class="titulo-servicio">Organización (Wedding and Event Planner)</span>
+      </div>
+      <div class="servicio-box servicio3" onclick="mostrarDescripcion(2)">
+        <div class="overlay"></div>
+        <span class="titulo-servicio">Alquiler de menaje y mobiliario</span>
+      </div>
+      <div class="servicio-box servicio4" onclick="mostrarDescripcion(3)">
+        <div class="overlay"></div>
+        <span class="titulo-servicio">Catering para eventos</span>
+      </div>
+      <div class="servicio-box servicio5" onclick="mostrarDescripcion(4)">
+        <div class="overlay"></div>
+        <span class="titulo-servicio">Coctelería</span>
+      </div>
+      <div class="servicio-box servicio6" onclick="mostrarDescripcion(5)">
+        <div class="overlay"></div>
+        <span class="titulo-servicio">Proveedor de certificados</span>
+      </div>
+    </div>
+
+    <!-- ✅ Aquí va el bloque dinámico -->
+    <div class="descripcion-expandida" id="descripcion-expandida" style="display: none;">
+      <p id="texto-descripcion"></p>
     </div>
   </section>
-  
 
+  <!-- Footer -->
   <footer class="footer-simple">
     <div class="footer-links">
       <a href="index.html">Inicio</a>
@@ -58,27 +81,21 @@
       <a href="videos.html">Videos</a>
       <a href="formulario.html">Contacto</a>
     </div>
-  
     <div class="footer-social">
       <a href="https://instagram.com/alejariveros" target="_blank">@alejariveros</a> |
       <a href="https://instagram.com/eventosdosa" target="_blank">@eventosdosa</a>
     </div>
     <div class="footer-whatsapp">
       <img src="src/whatsapp1.png" alt="WhatsApp Icon">
-      <span>+57 320 456 7890</span>
+      <span>+57 321 460 3514</span>
     </div>
-  
-    <div class="footer-creditos">
-      © 2025 Alejandra Riveros
-    </div>
-  
+    <div class="footer-creditos">© 2025 Alejandra Riveros</div>
     <div class="footer-logo">
       <img src="src/dosa.png" alt="Logo Dosa">
     </div>
   </footer>
-  
 
-  <!-- Script para que aparezca el menú al hacer scroll -->
+  <!-- Scripts -->
   <script>
     window.addEventListener('scroll', function() {
       const menu = document.querySelector('.menu');
@@ -88,26 +105,141 @@
         menu.classList.remove('visible');
       }
     });
-  </script>
-  <script>
-    // mostrar menú con botón hamburguesa
+
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
-  
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('visible');
     });
-  </script>
-  <script>
+
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('fade-in');
     });
+
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+
+    const descripciones = [
+  // Servicio 1 - Decoraciones
+  `<h3>Decoraciones</h3>
+   <ul class="lista-servicio">
+     <li>Decoración floral (centros de mesa, arreglos, arcos, ramos)</li>
+     <li>Ambientación temática (colores, estilos, conceptos)</li>
+     <li>Decoración de techos</li>
+     <li>Instalaciones para ceremonias y recepciones</li>
+     <li>Diseño y montaje de mesas de postres o bienvenida</li>
+     <li>Asesoría personalizada para crear tu concepto ideal</li>
+   </ul>`,
+
+  // Servicio 2 - Organización
+  `<h3>Organización</h3>
+   <ul class="lista-servicio">
+     <li>Planeación completa y coordinación de eventos</li>
+     <li>Desarrollo de concepto y temática personalizada</li>
+     <li>Selección y gestión de proveedores</li>
+     <li>Diseño y decoración del evento</li>
+     <li>Logística y cronograma del día</li>
+     <li>Supervisión en sitio durante el evento</li>
+     <li>Asesoría en protocolo y etiqueta</li>
+   </ul>`,
+
+  // Servicio 3 - Menaje y mobiliario
+  `<h3>Alquiler de menaje y mobiliario</h3>
+   <ul class="lista-servicio">
+     <li>Mesas y sillas</li>
+     <li>Vajilla, cristalería y cubertería</li>
+     <li>Mantelería y servilletas</li>
+     <li>Mesas cocteleras</li>
+     <li>Elementos decorativos</li>
+   </ul>`,
+
+  // Servicio 4 - Personal
+  `<h3>Catering para eventos</h3>
+   <ul class="lista-servicio">
+     <li>Meseros profesionales</li>
+     <li>Coordinadores de eventos</li>
+     <li>Personal de servicio</li>
+   </ul>`,
+
+  // Servicio 5 - Coctelería
+  `<h3>Coctelería</h3>
+   <ul class="lista-servicio">
+     <li>Cócteles</li>
+     <li>Bebidas sin alcohol</li>
+     <li>Barra personalizada según el estilo del evento</li>
+     <li>Bartenders</li>
+     <li>Cristalería, utensilios y decoración para la barra</li>
+     <li>Show en vivo</li>
+   </ul>`,
+
+  // Servicio 6 - Proveedor de certificados
+  `<h3>Proveedor de certificados</h3>
+   <ul class="lista-servicio">
+     <li>Comida</li>
+     <li>Repostería y pastelería</li>
+     <li>Mesas de pasabocas</li>
+     <li>Locaciones</li>
+     <li>Producción técnica</li>
+     <li>Música en vivo</li>
+     <li>Entretenimiento</li>
+     <li>Fotografía y videos</li>
+     <li>Maquillaje</li>
+     <li>Nail spa</li>
+     <li>Pirotecnia</li>
+     <li>Alquiler de vehículos</li>
+   </ul>`
+];
+
+
+
+
+    let servicioActual = null;
+    const descripcion = document.getElementById('descripcion-expandida');
+    const texto = document.getElementById('texto-descripcion');
+
+    function mostrarDescripcion(index) {
+  const servicios = document.querySelectorAll('.servicio-box');
+  const box = servicios[index];
+  const grid = document.querySelector('.servicios-grid-unida');
+
+  if (servicioActual === index) {
+    // Si ya está abierta la misma → cerrar con animación
+    descripcion.classList.remove('visible');
+    setTimeout(() => {
+      descripcion.style.display = "none";
+    }, 400);
+    servicioActual = null;
+    return;
+  }
+
+  // Cerrar anterior (si hay)
+  descripcion.classList.remove('visible');
+  descripcion.style.display = "none";
+  descripcion.remove();
+
+  texto.innerHTML = descripciones[index];
+
+
+  // Posicionar la descripción
+  if (window.innerWidth <= 768) {
+    box.insertAdjacentElement('afterend', descripcion);
+  } else {
+    const fila = Math.floor(index / 3) * 3;
+    const ultimoElementoFila = servicios[Math.min(fila + 2, servicios.length - 1)];
+    ultimoElementoFila.insertAdjacentElement('afterend', descripcion);
+  }
+
+  // Mostrar con animación suave
+  descripcion.style.display = "block";
+  setTimeout(() => {
+    descripcion.classList.add('visible');
+  }, 10);
+
+  servicioActual = index;
+}
+
   </script>
-<script>
-  window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-  });
-</script>
-  
+
 </body>
 </html>
