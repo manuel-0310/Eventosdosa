@@ -41,44 +41,70 @@
     <h1>Testimonios</h1>
     <div class="testimonios-grid">
   
-      <div class="testimonio">
-        <img src="src/testimonio1.jpg" alt="Pareja 1">
-        <h3>Natalia y Manuel</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+      <div class="testimonio" onclick="abrirModalTestimonio(0)">
+        <img src="src/testimonio1.jpg" alt="Mariana y Alfredo">
+        <h3>Mariana y Alfredo</h3>
+        <img src="src/estrellas.png" alt="Estrellas" class="estrellas">
+        <p>Dos A Eventos fueron los artífices de una boda espectacular! Tuvieron en cuenta todos los detalles necesarios para que nuestro día fuera perfecto. La comida, decoración, música, servicio y logística fue EXCELENTE! Los recomendáremos siempre a cualquier pareja! Gracias infinitas por tanto!
+        </p>
       </div>
   
-      <div class="testimonio">
-        <img src="src/testimonio1.jpg" alt="Pareja 2">
-        <h3>Carolina y Jonathan</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+      <div class="testimonio" onclick="abrirModalTestimonio(1)">
+        <img src="src/testimonio3.jpg" alt="Luisana y Edwin">
+        <h3>Luisana y Edwin</h3>
+        <img src="src/estrellas.png" alt="Estrellas" class="estrellas">
+        <p>Personas increíbles, dispuestas a hacer tu sueño realidad. Organizados, especiales y muy atentos a los detalles. Alejandro y Alejandra excelentes e increíbles. Tienen muchas buenas ideas y siempre dispuestos a colaborar ... Recomendados 100%
+        </p>
       </div>
   
-      <div class="testimonio">
-        <img src="src/testimonio1.jpg" alt="Pareja 3">
-        <h3>Carolina y Thomas</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec ante. Sed lacinia, urna non tincidunt mattis.</p>
+      <div class="testimonio" onclick="abrirModalTestimonio(2)">
+        <img src="src/testimonio5.jpg" alt="Lorena y Alejandro">
+        <h3>Lorena y Alejandro</h3>
+        <img src="src/estrellas.png" alt="Estrellas" class="estrellas">
+        <p>Hola chicos primero que todo para agradecerles a todo el equipo de Dos A evento por el esfuerzo la dedicación y el amor que le pusieron a nuestro dia para el mejor  e inolvidable . Todo estuvo espectacular mil y mil gracias Dios los siga bendiciendo y abriendo grandes puertas un gran abrazo de parte de la familia GUEZGUAN MOLANO</p>
+      </div>
+
+  
+      <div class="testimonio" onclick="abrirModalTestimonio(3)">
+        <img src="src/testimonio7.jpg" alt="Ximena y Andrés">
+        <h3>Ximena y Andrés</h3>
+        <img src="src/estrellas.png" alt="Estrellas" class="estrellas">
+<p>Hola chicos, gracias por absolutamente todo, salió muy hermoso. A pesar de la lluvia fue muy lindo y se vio el esfuerzo: la decoración, la ceremonia, las flores, la comida, los postres, el personal… todo les encantó. La fogata fue ufff, lo mejor. Gracias por hacer este día tan especial y por esforzarse tanto. En especial a Sebastián, que aunque no lo conocíamos, hicimos click y nos hizo sentir muy cómodos. A Lina y a todos los chicos que se mojaron y seguían con su sonrisa, gracias. Notamos cada detalle y esfuerzo. Muchas gracias y felicitaciones, se nota que aman lo que hacen. 💕        </p>
       </div>
   
-      <div class="testimonio">
-        <img src="src/testimonio1.jpg" alt="Pareja 4">
-        <h3>Laura y Miguel</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel sem at justo bibendum aliquet. Vivamus in justo at leo.</p>
+  
+      <div class="testimonio" onclick="abrirModalTestimonio(4)">
+        <img src="src/testimonio9.jpg" alt="Caro y Rafa">
+        <h3>Caro y Rafa</h3>
+        <img src="src/estrellas.png" alt="Estrellas" class="estrellas">
+        <p>La experiencia con Alejandro y Alejandra fue maravillosa de principio a fin, tuvieron en cuenta cada detalle y cada una de nuestras peticiones, agregando siempre un plus desde su experiencia lo que hizo de nuestro día justamente lo que queríamos.        </p>
       </div>
   
-      <div class="testimonio">
-        <img src="src/testimonio1.jpg" alt="Pareja 5">
-        <h3>Sofía y Daniel</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus.</p>
-      </div>
-  
-      <div class="testimonio">
-        <img src="src/testimonio1.jpg" alt="Pareja 6">
-        <h3>Isabella y Andrés</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis. Aliquam erat volutpat. Aenean placerat.</p>
+      <div class="testimonio" onclick="abrirModalTestimonio(5)">
+        <img src="src/testimonio10.jpg" alt="Lau y Dani">
+        <h3>Lau y Dani</h3>
+        <img src="src/estrellas.png" alt="Estrellas" class="estrellas">
+        <p>Sólo tenemos cosas buenas por decir. Hicieron de nuestro matrimonio un día soñado y perfecto. Estamos infinita mente agradecidos.</p>
       </div>
   
     </div>
   </section>
+  
+  <div id="modal-testimonio" class="modal-testimonio">
+    <div class="modal-contenido-testimonio">
+      <span class="cerrar-modal" onclick="cerrarModalTestimonio()">&times;</span>
+  
+      <div id="modal-galeria" class="modal-galeria"></div>
+  
+      <h3 id="modal-nombre"></h3>
+  
+      <div class="modal-estrellas">
+        <img src="src/estrellas1.png" alt="Estrellas">
+      </div>
+  
+      <p id="modal-texto"></p>
+    </div>
+  </div>
   
 
   <footer class="footer-simple">
@@ -97,8 +123,8 @@
     </div>
     <div class="footer-whatsapp">
       <img src="src/whatsapp1.png" alt="WhatsApp Icon">
-      <span>+57 320 456 7890</span>
-    </div>
+      <span>+57 321 460 3514</span>
+        </div>
   
     <div class="footer-creditos">
       © 2025 Alejandra Riveros
@@ -140,6 +166,63 @@
     document.body.classList.add('loaded');
   });
 </script>
+<script>
+  const testimonios = [
+    {
+      nombre: "Mariana y Alfredo",
+      texto: "Dos A Eventos fueron los artífices de una boda espectacular! Tuvieron en cuenta todos los detalles necesarios para que nuestro día fuera perfecto. La comida, decoración, música, servicio y logística fue EXCELENTE! Los recomendáremos siempre a cualquier pareja! Gracias infinitas por tanto!",
+      fotos: ["mariana1.jpeg", "mariana2.jpeg", "mariana3.jpeg"]
+    },
+    {
+      nombre: "Luisana y Edwin",
+      texto: "Personas increíbles, dispuestas a hacer tu sueño realidad. Organizados, especiales y muy atentos a los detalles. Alejandro y Alejandra excelentes e increíbles. Tienen muchas buenas ideas y siempre dispuestos a colaborar ... Recomendados 100%",
+      fotos: ["luisana1.jpeg","luisana2.jpeg","luisana3.jpeg"]
+    },
+    {
+      nombre: "Lorena y Alejandro",
+      texto: "Hola chicos primero que todo para agradecerles a todo el equipo de Dos A evento por el esfuerzo la dedicación y el amor que le pusieron a nuestro dia para el mejor e inolvidable . Todo estuvo espectacular mil y mil gracias Dios los siga bendiciendo y abriendo grandes puertas un gran abrazo de parte de la familia GUEZGUAN MOLANO",
+      fotos: ["lorena1.jpeg","lorena2.jpeg","lorena3.jpeg"]
+    },
+    {
+      nombre: "Ximena y Andrés",
+      texto: "Hola chicos, gracias por absolutamente todo, salió muy hermoso. A pesar de la lluvia fue muy lindo y se vio el esfuerzo: la decoración, la ceremonia, las flores, la comida, los postres, el personal… todo les encantó. La fogata fue ufff, lo mejor. Gracias por hacer este día tan especial y por esforzarse tanto. En especial a Sebastián, que aunque no lo conocíamos, hicimos click y nos hizo sentir muy cómodos. A Lina y a todos los chicos que se mojaron y seguían con su sonrisa, gracias. Notamos cada detalle y esfuerzo. Muchas gracias y felicitaciones, se nota que aman lo que hacen. 💕",
+      fotos: ["ximena1.jpeg","ximena2.jpeg","ximena3.jpeg"]
+    },
+    {
+      nombre: "Caro y Rafa",
+      texto: "La experiencia con Alejandro y Alejandra fue maravillosa de principio a fin, tuvieron en cuenta cada detalle y cada una de nuestras peticiones, agregando siempre un plus desde su experiencia lo que hizo de nuestro día justamente lo que queríamos.",
+      fotos: ["caro1.jpeg","caro2.jpeg","caro3.jpeg"]
+    },  
+    {
+      nombre: "Lau y Dani",
+      texto: "Sólo tenemos cosas buenas por decir. Hicieron de nuestro matrimonio un día soñado y perfecto. Estamos infinita mente agradecidos.",
+      fotos: ["lau1.jpeg", "lau2.jpeg","lau3.jpeg"]
+    },  
+   
   
+  ];
+  function abrirModalTestimonio(index) {
+  const testimonio = testimonios[index];
+  document.getElementById("modal-nombre").innerText = testimonio.nombre;
+  document.getElementById("modal-texto").innerText = testimonio.texto;
+
+  const galeria = document.getElementById("modal-galeria");
+  galeria.innerHTML = "";
+  testimonio.fotos.forEach(foto => {
+    const img = document.createElement("img");
+    img.src = "src/" + foto;
+    img.alt = testimonio.nombre;
+    galeria.appendChild(img);
+  });
+
+  document.getElementById("modal-testimonio").classList.add("abierto");
+}
+
+function cerrarModalTestimonio() {
+  document.getElementById("modal-testimonio").classList.remove("abierto");
+}
+
+</script>
+
 </body>
 </html>
