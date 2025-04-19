@@ -264,6 +264,7 @@ nav a {
   padding: 60px 20px;
   color: #b74e58;
   text-align: center;
+  margin-top: 50px;
 }
 
 .fotos h1 {
@@ -490,6 +491,7 @@ html {
   background-color: #f8e9e9;
   text-align: center;
   color: #b74e58;
+  padding-top: 100px;
 }
 
 .testimonios h1 {
@@ -546,6 +548,7 @@ html {
   background-color: #f8e9e9;
   text-align: center;
   color: #b74e58;
+  padding-top: 100px;
 }
 
 .videos h1 {
@@ -565,16 +568,50 @@ html {
   width: 320px;
   aspect-ratio: 16/9;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.video-container iframe {
+.video-container video {
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: 12px;
+  object-fit: cover;
 }
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.video-item {
+  text-align: center;
+  max-width: 360px;
+}
+
+.video-titulo {
+  font-family: 'Castilon', serif;
+  color: #b74e58;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.video {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background-color: #000;
+}
+
+.video-descripcion {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: #333;
+  margin-top: 10px;
+}
+
 
 @media (max-width: 992px) {
   .galeria-masonry {
@@ -714,13 +751,18 @@ html {
 @media (max-width: 768px) {
 
   nav {
-    display: none;
     width: 100%;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
   }
-
+  
   nav.visible {
-    display: block;
+    opacity: 1;
+    max-height: 500px; /* o más si tienes muchos items */
   }
+  
 
   nav ul {
     flex-direction: column;
@@ -830,10 +872,17 @@ html {
   }
 
   nav {
-    display: none;
-    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
   }
-
+  
+  nav.visible {
+    max-height: 500px; /* ajusta según el contenido */
+    opacity: 1;
+  }
+  
   nav.visible {
     display: block;
   }
@@ -1092,6 +1141,8 @@ body.loaded {
 .servicios-todos {
   padding: 0;
   margin: 0;
+  padding-top: 100px;
+  
 }
 
 .servicios-grid-unida {

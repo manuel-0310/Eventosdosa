@@ -12,10 +12,7 @@
 
 
 <body>
-    <!-- Intro con logo -->
-    <div class="intro">
-        <img src="src/dosa.png" alt="Logo Eventos Dosa">
-    </div>
+  
 
     <!-- Menú -->
     <header class="menu visible">
@@ -86,16 +83,7 @@
       </footer>
       
     <!-- Script para mostrar menú al hacer scroll -->
-    <script>
-        window.addEventListener('scroll', function () {
-            const menu = document.querySelector('.menu');
-            if (window.scrollY > 50) {
-                menu.classList.add('visible');
-            } else {
-                menu.classList.remove('visible');
-            }
-        });
-    </script>
+    
 <script>
     fetch("https://api.sheetbest.com/sheets/f96dea09-d844-497d-887f-c28d3c1236f2")
       .then(res => res.json())
